@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "better-npm-run start",
-    "test": "jest"
+    "test": "jest --colors",
+    "test:watch": "jest --colors --watch"
   },
   "betterScripts": {
     "start": {
@@ -16,7 +17,11 @@
     }
   },
   "jest": {
-    "moduleDirectories": ["node_modules", "app"]
+    "notify": "true",
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ]
   },
   "repository": {
     "type": "git",
@@ -53,7 +58,6 @@
     "eslint-plugin-react": "^6.1.0",
     "express": "^4.14.0",
     "html-webpack-plugin": "^2.22.0",
-    "isparta-loader": "^2.0.0",
     "jest": "^16.0.2",
     "jsdom": "^9.4.2",
     "postcss-import": "^8.1.2",
@@ -62,6 +66,7 @@
     "precss": "^1.4.0",
     "react-addons-test-utils": "^15.3.0",
     "react-hot-loader": "^3.0.0-beta.5",
+    "redux-mock-store": "^1.2.1",
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
@@ -70,14 +75,11 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "immutable": "^3.8.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
     "redux": "^3.6.0",
-    "redux-immutable": "^3.0.8",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0"
   }
