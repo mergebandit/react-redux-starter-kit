@@ -1,32 +1,14 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, { PropTypes } from 'react';
 
-import * as actions from 'actions';
-
-class Root extends Component {
-  static propTypes = {
-    connected: PropTypes.bool,
-    checkConnection: PropTypes.func.isRequired,
-  }
-
-  componentDidMount() {
-    this.props.checkConnection();
-  }
-
-  render() {
-    return (
-      <div>Connected to redux: {this.props.connected.toString()}</div>
-    );
-  }
+function Root({ connected }) {
+  return (
+    <div>Connected to redux: <span>{connected}</span></div>
+  );
 }
 
-function mapStateToProps(state) {
-  return {
-    connected: state,
-  };
-}
+Root.propTypes = {
+  connected: PropTypes.string,
+};
 
-export default connect(
-  mapStateToProps,
-  actions,
-)(Root);
+export default Root;
+

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "better-npm-run start",
-    "test": "better-npm-run test",
-    "test:watch": "better-npm-run test:watch"
+    "test": "jest"
   },
   "betterScripts": {
     "start": {
@@ -14,18 +13,10 @@
       "env": {
         "NODE_ENV": "development"
       }
-    },
-    "test": {
-      "command": "babel-tape-runner -r ./test/setup.js ./test/**/*.test.js | tap-notify | tap-spec",
-      "env": {
-        "NODE_ENV": "test",
-        "BABEL_ENV": "test",
-        "NODE_PATH": "app"
-      }
-    },
-    "test:watch": {
-      "command": "nodemon -x \"npm test\""
     }
+  },
+  "jest": {
+    "moduleDirectories": ["node_modules", "app"]
   },
   "repository": {
     "type": "git",
@@ -41,15 +32,16 @@
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
+    "babel-jest": "^16.0.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-tape-runner": "^2.0.1",
     "better-npm-run": "0.0.10",
-    "blue-tape": "^1.0.0",
     "connect-history-api-fallback": "^1.3.0",
     "css-loader": "^0.25.0",
     "css-mqpacker": "^5.0.1",
@@ -62,8 +54,8 @@
     "express": "^4.14.0",
     "html-webpack-plugin": "^2.22.0",
     "isparta-loader": "^2.0.0",
+    "jest": "^16.0.2",
     "jsdom": "^9.4.2",
-    "nodemon": "^1.11.0",
     "postcss-import": "^8.1.2",
     "postcss-loader": "^1.0.0",
     "postcss-math": "0.0.5",
@@ -72,7 +64,6 @@
     "react-hot-loader": "^3.0.0-beta.5",
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
-    "tap-spec": "^4.1.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",

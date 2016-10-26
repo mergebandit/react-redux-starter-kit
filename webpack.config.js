@@ -28,7 +28,6 @@ module.exports = {
   resolve: {
     root: [
       path.resolve(__dirname, 'app'),
-      path.resolve(__dirname, 'shared'),
     ],
     extensions: ['', '.js'],
   },
