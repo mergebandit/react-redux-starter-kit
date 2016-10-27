@@ -10,10 +10,10 @@ Simple starter for react-redux apps;
 
 ----------
 ## Technologies
-> React + Redux  
-> React-router  
-> Tooling: webpack, babel, eslint, hot loading, redux-devtools  
-> Testing: jest, enzyme
+> - React + Redux  
+> - React-router  
+> - Tooling: webpack, babel, eslint, hot loading, redux-devtools  
+> - Testing: jest, enzyme
 
 ## Build
 Run `npm build` to build your project. All files you can find in `dist` folder
