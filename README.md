@@ -1,29 +1,24 @@
 # React Redux simple starter
 Simple starter for react-redux apps;
 
-*Has connected redux dev tools chrome extension (if able);*
+>Has connected redux dev tools chrome extension (if able);
 
-# How to run
-```
-npm install
-npm start
-```
+## Installation
+- Clone this repo.
+- Run `npm install` to install dependencies.
+- Run `npm start` to start the dev server and visit http://localhost:3000 to see the app.
 
-# Testing
-Test utils used in the boilerplate:
-  1. [Jest](https://facebook.github.io/jest/)
-  2. [Enzyme](airbnb.io/enzyme/)
-  3. [Redux mock store](https://github.com/arnaudbenard/redux-mock-store)
+----------
+## Technologies
+> React + Redux
+> React-router
+> Tooling: webpack, babel, eslint, hot loading, redux-devtools
+> Testing: jest, enzyme
 
-```
-npm test
-```
-or
-```
-npm run test:watch
-```
+## Build
+Run `npm build` to build your project. All files you can find in `dist` folder
 
+## Testing
 
-# ToDO
-1. Add fonts and image loaders
-2. Add production config
+- Run `npm test` to run single test
+- Run `npm run test:watch` to watch tests
