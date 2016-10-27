@@ -24,19 +24,6 @@ const middleware = webpackMiddleware(compiler, {
 });
 app.use(middleware);
 
-app.get('/api/cities', function response(req, res) {
-  var cities = require('./server/cities.js');
-  res.send(cities);
-  res.end();
-});
-
-
-app.get('/api/countries', function response(req, res) {
-  var countries = require('./server/countries.js');
-  res.send(countries);
-  res.end();
-});
-
 
 app.use(webpackHotMiddleware(compiler));
 app.use(history());
