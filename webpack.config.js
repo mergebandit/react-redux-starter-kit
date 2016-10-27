@@ -34,8 +34,27 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ },
-      { test: /\.css$/, loaders: ['style', 'css', 'postcss'], exclude: /node_modules/ },
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css', 'postcss'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=images/[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file?name=fonts/[name].[ext]'
+      }
     ],
   },
 

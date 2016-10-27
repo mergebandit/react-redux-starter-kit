@@ -1,7 +1,13 @@
 @import 'normalize.css';
+@import './fonts.css';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
 .app {
-  background: lightgreen;
+  background: url(../images/background.jpg) 50% 50% no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
