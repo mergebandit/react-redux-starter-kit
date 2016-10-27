@@ -1,15 +1,20 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
-module.exports = {
-  entry: [
-    'webpack-hot-middleware/client?reload=true',
-    './index',
-  ],
+const isProd = process.env.NODE_ENV === 'production';
 
-  debug: true,
-  devtool: 'cheap-module-source-map',
+const entry = (isProd)
+  ? './'
+  : ['webpack-hot-middleware/client?reload=true', './'];
+
+
+const config = {
+  entry: entry,
+
+  debug: !isProd,
+  devtool: isProd ? 'source-map' : 'cheap-module-source-map',
 
   output: {
     filename: 'js/[name].[hash].js',
@@ -41,7 +46,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css', 'postcss'],
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss'),
         exclude: /node_modules/
       },
       {
@@ -69,12 +74,26 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
     new HtmlWebpackPlugin({
       template: './template.html',
     }),
+    new ExtractTextPlugin('css/[name].[hash].css', { disable: isProd })
   ],
 };
+
+
+if (isProd) {
+  config.plugins.push(
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  )
+} else {
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+}
+
+module.exports = config;
