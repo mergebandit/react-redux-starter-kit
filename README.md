@@ -10,9 +10,9 @@ Simple starter for react-redux apps;
 
 ----------
 ## Technologies
-> React + Redux
-> React-router
-> Tooling: webpack, babel, eslint, hot loading, redux-devtools
+> React + Redux  
+> React-router  
+> Tooling: webpack, babel, eslint, hot loading, redux-devtools  
 > Testing: jest, enzyme
 
 ## Build
