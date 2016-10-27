@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 function App({ children }) {
   return (
-    <div className="app">{children || 'Hello'}</div>
+    <div className="app">{children}</div>
   );
 }
 
